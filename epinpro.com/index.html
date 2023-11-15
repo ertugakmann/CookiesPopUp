@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cookie Constent Box | CodingNepal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <img src="logo2.png" class="logo"/>
+        <div class="content">
+          
+          <header style="color: #1b1833;">Çerez Politikası</header>
+            <p><b>
+            Size daha iyi bir hizmet verebilmek amacıyla kişisel verilerinizi mevzuata uygun olarak çerezler aracılığıyla kaydedip işliyoruz.
+          </b>
+          </p>
+          <div class="buttons">
+            <button class="item">Kabul Et</button>
+             </div>
+            
+        </div>
+        
+      </div>
+      
+    </div>
+
+    <script>
+      const cookieBox = document.querySelector(".wrapper"),
+        acceptBtn = cookieBox.querySelector("button");
+
+      acceptBtn.onclick = () => {
+        document.cookie = "CookieBy=CodingNepal; max-age=" + 60 * 60 * 24 * 30;
+        if (document.cookie) {        
+          cookieBox.classList.add("hide"); 
+        } else {
+          alert(
+            "Cookie can't be set! Please unblock this site from the cookie setting of your browser."
+          );
+        }
+      };
+      let checkCookie = document.cookie.indexOf("CookieBy=CodingNepal"); 
+      
+      checkCookie != -1
+        ? cookieBox.classList.add("hide")
+        : cookieBox.classList.remove("hide");
+    </script>
+  </body>
+</html>
